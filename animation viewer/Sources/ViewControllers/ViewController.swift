@@ -23,7 +23,8 @@ final class ViewController: UIViewController {
       $0.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
   ).then {
-    $0.backgroundColor = .gray
+    $0.backgroundColor = .white
+    $0.register(AniCell.self, forCellWithReuseIdentifier: "aniCell")
   }
   
   // MARK: View Life Cycle
@@ -33,7 +34,6 @@ final class ViewController: UIViewController {
     
     self.collectionView.dataSource = self
     self.collectionView.delegate = self
-    self.collectionView.register(AniCell.self, forCellWithReuseIdentifier: "aniCell")
     
     self.view.addSubview(collectionView)
     
