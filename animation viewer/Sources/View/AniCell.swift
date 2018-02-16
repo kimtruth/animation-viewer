@@ -18,7 +18,6 @@ final class AniCell: UICollectionViewCell {
     $0.text = "UI 테스트 제목"
   }
   
-  
   // MARK: Initializing
   
   override init(frame: CGRect) {
@@ -26,6 +25,19 @@ final class AniCell: UICollectionViewCell {
     
     self.addSubview(imageView)
     self.addSubview(titleLabel)
+    
+    self.imageView.snp.makeConstraints { make in
+      make.top.equalToSuperview()
+      make.left.equalToSuperview()
+      make.right.equalToSuperview()
+      make.bottom.equalToSuperview().offset(-30)
+    }
+    self.titleLabel.snp.makeConstraints { make in
+      make.top.equalTo(self.imageView.snp.bottom)
+      make.left.equalToSuperview()
+      make.right.equalToSuperview()
+      make.bottom.equalToSuperview()
+    }
   }
   
   required init?(coder aDecoder: NSCoder) {
