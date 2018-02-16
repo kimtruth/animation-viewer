@@ -13,6 +13,12 @@ import Kingfisher
 final class AniCell: UICollectionViewCell {
   
   // MARK: UI
+  private let imageShadowView = UIView().then {
+    $0.layer.shadowOffset = .zero
+    $0.layer.shadowColor = UIColor.black.cgColor
+    $0.layer.shadowOpacity = 0.25
+    $0.layer.shadowRadius = 5.0
+  }
   private let imageView = UIImageView().then {
     $0.backgroundColor = .lightGray
     $0.clipsToBounds = true
@@ -28,14 +34,18 @@ final class AniCell: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
     
-    self.addSubview(imageView)
-    self.addSubview(titleLabel)
+    self.imageShadowView.addSubview(imageView)
+    self.addSubview(self.imageShadowView)
+    self.addSubview(self.titleLabel)
     
-    self.imageView.snp.makeConstraints { make in
+    self.imageShadowView.snp.makeConstraints { make in
       make.top.equalToSuperview()
       make.left.equalToSuperview()
       make.right.equalToSuperview()
       make.bottom.equalToSuperview().offset(-30)
+    }
+    self.imageView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
     }
     self.titleLabel.snp.makeConstraints { make in
       make.top.equalTo(self.imageView.snp.bottom)
