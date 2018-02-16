@@ -8,10 +8,24 @@
 
 import UIKit
 
-class AniCell: UICollectionViewCell {
+final class AniCell: UICollectionViewCell {
+  
+  // MARK: UI
+  private let imageView = UIImageView().then {
+    $0.backgroundColor = .lightGray
+  }
+  private let titleLabel = UILabel().then {
+    $0.text = "UI 테스트 제목"
+  }
+  
+  
+  // MARK: Initializing
   
   override init(frame: CGRect) {
     super.init(frame: frame)
+    
+    self.addSubview(imageView)
+    self.addSubview(titleLabel)
   }
   
   required init?(coder aDecoder: NSCoder) {
