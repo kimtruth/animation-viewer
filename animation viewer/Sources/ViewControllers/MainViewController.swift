@@ -31,6 +31,13 @@ final class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    self.navigationItem.leftBarButtonItem = UIBarButtonItem(
+      image: UIImage(named: "menu"),
+      style: .plain,
+      target: self,
+      action: #selector(showMenu)
+    )
+    
     self.collectionView.dataSource = self
     self.collectionView.delegate = self
     
@@ -56,6 +63,10 @@ final class MainViewController: UIViewController {
         self.collectionView.reloadData()
       }
     }
+  }
+  
+  @objc func showMenu() {
+    print("show menu called")
   }
   
 }
