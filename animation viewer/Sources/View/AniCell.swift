@@ -17,7 +17,8 @@ final class AniCell: UICollectionViewCell {
     $0.layer.cornerRadius = 10
   }
   private let titleLabel = UILabel().then {
-    $0.text = "UI 테스트 제목"
+    $0.text = "테스트 제목"
+    $0.font = .systemFont(ofSize: 13)
   }
   
   // MARK: Initializing
