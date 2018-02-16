@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Kingfisher
+
 final class AniCell: UICollectionViewCell {
   
   // MARK: UI
@@ -51,6 +53,10 @@ final class AniCell: UICollectionViewCell {
   
   func configure(info: AniInfo) {
     self.titleLabel.text = info.desc
+    if let key = info.key, let url = URL(string: "http://very.secret.url/assets/img/\(key).png") {
+      self.imageView.kf.setImage(with: url)
+    }
+    
   }
   
 }
