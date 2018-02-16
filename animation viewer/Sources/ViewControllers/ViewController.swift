@@ -14,7 +14,9 @@ final class ViewController: UIViewController {
   
   private let collectionView = UICollectionView(
     frame: .zero,
-    collectionViewLayout: UICollectionViewFlowLayout()
+    collectionViewLayout: UICollectionViewFlowLayout().then {
+      $0.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
   ).then {
     $0.backgroundColor = .gray
   }
@@ -40,16 +42,23 @@ final class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 0
+    return 3
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    return UICollectionViewCell()
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "aniCell", for: indexPath)
+    return cell
   }
   
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let width = (self.view.width - 30) / 2
+    let height = width / 16 * 9 + 20
+    let size = CGSize(width: width, height: height)
+    return size
+  }
   
 }
 
