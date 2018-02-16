@@ -5,6 +5,7 @@ target 'animation viewer' do
 
   # Networking
   pod 'Alamofire', '~> 4.6'
+  pod 'Kingfisher', '~> 4.6.2'
   
   # Model
   pod 'ObjectMapper', '~> 3.1'
