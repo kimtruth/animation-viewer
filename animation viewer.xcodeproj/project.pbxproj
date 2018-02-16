@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		98FDB26D2036F67C00FDA58A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDB26C2036F67C00FDA58A /* AppDelegate.swift */; };
 		98FDB26F2036F67C00FDA58A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDB26E2036F67C00FDA58A /* ViewController.swift */; };
-		98FDB2722036F67C00FDA58A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDB2702036F67C00FDA58A /* Main.storyboard */; };
 		98FDB2742036F67C00FDA58A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98FDB2732036F67C00FDA58A /* Assets.xcassets */; };
 		98FDB2772036F67C00FDA58A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDB2752036F67C00FDA58A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,7 +17,6 @@
 		98FDB2692036F67C00FDA58A /* animation viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "animation viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98FDB26C2036F67C00FDA58A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98FDB26E2036F67C00FDA58A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		98FDB2712036F67C00FDA58A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98FDB2732036F67C00FDA58A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98FDB2762036F67C00FDA58A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98FDB2782036F67C00FDA58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,13 +53,36 @@
 			isa = PBXGroup;
 			children = (
 				98FDB26C2036F67C00FDA58A /* AppDelegate.swift */,
-				98FDB26E2036F67C00FDA58A /* ViewController.swift */,
-				98FDB2702036F67C00FDA58A /* Main.storyboard */,
-				98FDB2732036F67C00FDA58A /* Assets.xcassets */,
-				98FDB2752036F67C00FDA58A /* LaunchScreen.storyboard */,
+				98FDB27F2036F7A800FDA58A /* Resources */,
+				98FDB2802036F90C00FDA58A /* Sources */,
 				98FDB2782036F67C00FDA58A /* Info.plist */,
 			);
 			path = "animation viewer";
+			sourceTree = "<group>";
+		};
+		98FDB27E2036F79E00FDA58A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				98FDB26E2036F67C00FDA58A /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		98FDB27F2036F7A800FDA58A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				98FDB2732036F67C00FDA58A /* Assets.xcassets */,
+				98FDB2752036F67C00FDA58A /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		98FDB2802036F90C00FDA58A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				98FDB27E2036F79E00FDA58A /* ViewControllers */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +146,6 @@
 			files = (
 				98FDB2772036F67C00FDA58A /* LaunchScreen.storyboard in Resources */,
 				98FDB2742036F67C00FDA58A /* Assets.xcassets in Resources */,
-				98FDB2722036F67C00FDA58A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,14 +164,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		98FDB2702036F67C00FDA58A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				98FDB2712036F67C00FDA58A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		98FDB2752036F67C00FDA58A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -277,6 +289,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z79MDNXYJV;
 				INFOPLIST_FILE = "animation viewer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.mikumiku.animation-viewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z79MDNXYJV;
 				INFOPLIST_FILE = "animation viewer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.mikumiku.animation-viewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
