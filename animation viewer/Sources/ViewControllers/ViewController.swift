@@ -54,6 +54,7 @@ final class ViewController: UIViewController {
       case .success(let value):
         guard let infoJSONArray = value as? [[String: Any]] else { return }
         self.infos = [AniInfo](JSONArray: infoJSONArray)
+        self.collectionView.reloadData()
       }
     }
   }
@@ -63,11 +64,13 @@ final class ViewController: UIViewController {
 extension ViewController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 3
+    return self.infos.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "aniCell", for: indexPath)
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "aniCell", for: indexPath) as! AniCell
+    cell.configure(info: self.infos[indexPath.item])
+    
     return cell
   }
   

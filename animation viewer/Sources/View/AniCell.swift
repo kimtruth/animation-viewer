@@ -47,4 +47,10 @@ final class AniCell: UICollectionViewCell {
     super.init(coder: aDecoder)
   }
   
+  // MARK: Configuring
+  
+  func configure(info: AniInfo) {
+    self.titleLabel.text = info.desc
+  }
+  
 }
