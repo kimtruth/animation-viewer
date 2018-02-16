@@ -13,6 +13,8 @@ final class AniCell: UICollectionViewCell {
   // MARK: UI
   private let imageView = UIImageView().then {
     $0.backgroundColor = .lightGray
+    $0.clipsToBounds = true
+    $0.layer.cornerRadius = 10
   }
   private let titleLabel = UILabel().then {
     $0.text = "UI 테스트 제목"
