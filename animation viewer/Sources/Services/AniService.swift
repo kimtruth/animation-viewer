@@ -12,7 +12,7 @@ struct AniService: APIServiceType {
   static func info(completion: @escaping (DataResponse<Any>) -> Void) {
     let urlString = self.url("/json")
     let headers = [
-      "Accpet": "application/json"
+      "Accept": "application/json"
     ]
     
     Alamofire
