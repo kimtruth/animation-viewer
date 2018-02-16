@@ -60,7 +60,7 @@ final class MainViewController: UIViewController {
   
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension MainViewController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return self.infos.count
@@ -75,7 +75,7 @@ extension ViewController: UICollectionViewDataSource {
   
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension MainViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let width = (self.view.width - 30) / 2
     let height = width / 16 * 9 + 30
