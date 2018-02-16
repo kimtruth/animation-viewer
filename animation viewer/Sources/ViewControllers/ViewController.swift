@@ -8,18 +8,35 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
+  // MARK: UI
+  
+  private let collectionView = UICollectionView(
+    frame: .zero,
+    collectionViewLayout: UICollectionViewFlowLayout()
+  ).then {
+    $0.backgroundColor = .gray
+  }
+  
+  // MARK: View Life Cycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.collectionView.dataSource = self
+    self.collectionView.delegate = self
+    
+    self.view.addSubview(collectionView)
   }
+  
+}
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
+extension ViewController: UICollectionViewDataSource {
+  
+}
 
-
+extension ViewController: UICollectionViewDelegateFlowLayout {
+  
 }
 
