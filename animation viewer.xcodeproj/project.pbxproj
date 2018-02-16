@@ -10,6 +10,7 @@
 		98F35D4A20370126006E474A /* AniCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F35D4920370126006E474A /* AniCell.swift */; };
 		98F35D4D20370DF8006E474A /* AniInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F35D4C20370DF8006E474A /* AniInfo.swift */; };
 		98F35D50203714A5006E474A /* APIServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F35D4F203714A5006E474A /* APIServiceType.swift */; };
+		98F35D532037151A006E474A /* AniService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F35D522037151A006E474A /* AniService.swift */; };
 		98FDB26D2036F67C00FDA58A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDB26C2036F67C00FDA58A /* AppDelegate.swift */; };
 		98FDB26F2036F67C00FDA58A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDB26E2036F67C00FDA58A /* ViewController.swift */; };
 		98FDB2742036F67C00FDA58A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98FDB2732036F67C00FDA58A /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 		98F35D4920370126006E474A /* AniCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniCell.swift; sourceTree = "<group>"; };
 		98F35D4C20370DF8006E474A /* AniInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniInfo.swift; sourceTree = "<group>"; };
 		98F35D4F203714A5006E474A /* APIServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceType.swift; sourceTree = "<group>"; };
+		98F35D522037151A006E474A /* AniService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniService.swift; sourceTree = "<group>"; };
 		98FDB2692036F67C00FDA58A /* animation viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "animation viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98FDB26C2036F67C00FDA58A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98FDB26E2036F67C00FDA58A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				98F35D4F203714A5006E474A /* APIServiceType.swift */,
+				98F35D522037151A006E474A /* AniService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				98F35D50203714A5006E474A /* APIServiceType.swift in Sources */,
 				98FDB26F2036F67C00FDA58A /* ViewController.swift in Sources */,
 				98F35D4A20370126006E474A /* AniCell.swift in Sources */,
+				98F35D532037151A006E474A /* AniService.swift in Sources */,
 				98FDB26D2036F67C00FDA58A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
