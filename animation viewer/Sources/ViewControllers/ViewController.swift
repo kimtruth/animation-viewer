@@ -10,6 +10,11 @@ import UIKit
 
 final class ViewController: UIViewController {
 
+  // MARK: Properties
+  
+  private var infos: [AniInfo] = []
+  
+  
   // MARK: UI
   
   private let collectionView = UICollectionView(
@@ -34,6 +39,22 @@ final class ViewController: UIViewController {
     
     self.collectionView.snp.makeConstraints { make in
       make.edges.equalToSuperview()
+    }
+    
+    self.fetchInfo()
+  }
+  
+  func fetchInfo() {
+    AniService.info { response in
+      switch response.result {
+      case .failure(let error):
+        print("Animation info load fail...")
+        print(error)
+        
+      case .success(let value):
+        guard let infoJSONArray = value as? [[String: Any]] else { return }
+        self.infos = [AniInfo](JSONArray: infoJSONArray)
+      }
     }
   }
   
