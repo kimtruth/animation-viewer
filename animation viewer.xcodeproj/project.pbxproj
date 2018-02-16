@@ -12,7 +12,7 @@
 		98F35D50203714A5006E474A /* APIServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F35D4F203714A5006E474A /* APIServiceType.swift */; };
 		98F35D532037151A006E474A /* AniService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F35D522037151A006E474A /* AniService.swift */; };
 		98FDB26D2036F67C00FDA58A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDB26C2036F67C00FDA58A /* AppDelegate.swift */; };
-		98FDB26F2036F67C00FDA58A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDB26E2036F67C00FDA58A /* ViewController.swift */; };
+		98FDB26F2036F67C00FDA58A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDB26E2036F67C00FDA58A /* MainViewController.swift */; };
 		98FDB2742036F67C00FDA58A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98FDB2732036F67C00FDA58A /* Assets.xcassets */; };
 		98FDB2772036F67C00FDA58A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDB2752036F67C00FDA58A /* LaunchScreen.storyboard */; };
 		C9485CE394785AD439E298D4 /* Pods_animation_viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F7918D55BA29B293385D4D /* Pods_animation_viewer.framework */; };
@@ -27,7 +27,7 @@
 		98F35D522037151A006E474A /* AniService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniService.swift; sourceTree = "<group>"; };
 		98FDB2692036F67C00FDA58A /* animation viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "animation viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98FDB26C2036F67C00FDA58A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		98FDB26E2036F67C00FDA58A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		98FDB26E2036F67C00FDA58A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		98FDB2732036F67C00FDA58A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98FDB2762036F67C00FDA58A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98FDB2782036F67C00FDA58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		98FDB27E2036F79E00FDA58A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				98FDB26E2036F67C00FDA58A /* ViewController.swift */,
+				98FDB26E2036F67C00FDA58A /* MainViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -269,7 +269,7 @@
 			files = (
 				98F35D4D20370DF8006E474A /* AniInfo.swift in Sources */,
 				98F35D50203714A5006E474A /* APIServiceType.swift in Sources */,
-				98FDB26F2036F67C00FDA58A /* ViewController.swift in Sources */,
+				98FDB26F2036F67C00FDA58A /* MainViewController.swift in Sources */,
 				98F35D4A20370126006E474A /* AniCell.swift in Sources */,
 				98F35D532037151A006E474A /* AniService.swift in Sources */,
 				98FDB26D2036F67C00FDA58A /* AppDelegate.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  animation viewer
 //
 //  Created by Truth on 2018. 2. 16..
@@ -8,12 +8,11 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class MainViewController: UIViewController {
 
   // MARK: Properties
   
   private var infos: [AniInfo] = []
-  
   
   // MARK: UI
   
