@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98F35D4A20370126006E474A /* AniCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F35D4920370126006E474A /* AniCell.swift */; };
 		98FDB26D2036F67C00FDA58A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDB26C2036F67C00FDA58A /* AppDelegate.swift */; };
 		98FDB26F2036F67C00FDA58A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDB26E2036F67C00FDA58A /* ViewController.swift */; };
 		98FDB2742036F67C00FDA58A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98FDB2732036F67C00FDA58A /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* Begin PBXFileReference section */
 		43285CEA3E24CA38658BA933 /* Pods-animation viewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-animation viewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-animation viewer/Pods-animation viewer.debug.xcconfig"; sourceTree = "<group>"; };
 		79A54B4B4224E8FCF83A84BB /* Pods-animation viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-animation viewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-animation viewer/Pods-animation viewer.release.xcconfig"; sourceTree = "<group>"; };
+		98F35D4920370126006E474A /* AniCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniCell.swift; sourceTree = "<group>"; };
 		98FDB2692036F67C00FDA58A /* animation viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "animation viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98FDB26C2036F67C00FDA58A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98FDB26E2036F67C00FDA58A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +40,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98F35D482036FF81006E474A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98F35D4920370126006E474A /* AniCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		98FDB2602036F67C00FDA58A = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +97,7 @@
 		98FDB2802036F90C00FDA58A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				98F35D482036FF81006E474A /* View */,
 				98FDB27E2036F79E00FDA58A /* ViewControllers */,
 			);
 			path = Sources;
@@ -232,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98FDB26F2036F67C00FDA58A /* ViewController.swift in Sources */,
+				98F35D4A20370126006E474A /* AniCell.swift in Sources */,
 				98FDB26D2036F67C00FDA58A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
