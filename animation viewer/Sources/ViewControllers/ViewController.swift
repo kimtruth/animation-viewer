@@ -26,6 +26,7 @@ final class ViewController: UIViewController {
     
     self.collectionView.dataSource = self
     self.collectionView.delegate = self
+    self.collectionView.register(AniCell.self, forCellWithReuseIdentifier: "aniCell")
     
     self.view.addSubview(collectionView)
     
