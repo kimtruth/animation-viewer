@@ -14,6 +14,13 @@ struct AniInfo: Mappable {
   var season: Int!
   var title: String!
   var year: Int!
+  var desc: String {
+    get{
+      guard let season = self.season else { return "" }
+      guard let title = self.title else { return "" }
+      return "[\(season)분기] \(title)"
+    }
+  }
   
   init?(map: Map) {
   }
@@ -21,7 +28,7 @@ struct AniInfo: Mappable {
   mutating func mapping(map: Map) {
     self.key <- map["key"]
     self.season <- map["season"]
-    self.title <- map["key"]
+    self.title <- map["value"]
     self.year <- map["year"]
   }
 }
