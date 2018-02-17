@@ -17,7 +17,7 @@ final class AniCell: UICollectionViewCell {
     $0.layer.shadowOffset = .zero
     $0.layer.shadowColor = UIColor.black.cgColor
     $0.layer.shadowOpacity = 0.25
-    $0.layer.shadowRadius = 5.0
+    $0.layer.shadowRadius = 3.0
   }
   private let imageView = UIImageView().then {
     $0.backgroundColor = .lightGray
@@ -47,7 +47,8 @@ final class AniCell: UICollectionViewCell {
     }
     self.titleLabel.snp.makeConstraints { make in
       make.top.equalTo(self.imageView.snp.bottom)
-      make.left.right.bottom.equalToSuperview()
+      make.left.equalTo(10)
+      make.right.bottom.equalToSuperview()
     }
   }
   
