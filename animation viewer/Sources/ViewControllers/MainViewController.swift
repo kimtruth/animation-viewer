@@ -71,9 +71,9 @@ final class MainViewController: UIViewController {
         let recentYear = Array(self.aniDict.keys).max() ?? 0
         if let infos = self.aniDict[recentYear] {
           self.infos = infos
+          self.collectionView.reloadData()
         }
         
-        self.collectionView.reloadData()
       }
     }
   }
@@ -81,6 +81,13 @@ final class MainViewController: UIViewController {
   @objc func showMenu() {
     let sideMenuViewController = SideMenuViewController()
     sideMenuViewController.years = Array(self.aniDict.keys).sorted(by: >)
+    sideMenuViewController.select = { year in
+      if let infos = self.aniDict[year] {
+        self.infos = infos
+        self.collectionView.reloadData()
+      }
+    }
+      
     self.present(sideMenuViewController, animated: false, completion: nil)
   }
   

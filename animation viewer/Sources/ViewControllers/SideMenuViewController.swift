@@ -13,7 +13,7 @@ final class SideMenuViewController: UIViewController {
   // MARK: Properties
   
   var years: [Int]?
-  
+  var select: ((Int) -> Void)?
   
   // MARK: UI
   
@@ -44,7 +44,13 @@ final class SideMenuViewController: UIViewController {
 // MARK: - UITableViewDelegate
 
 extension SideMenuViewController: UITableViewDelegate {
-  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let cell = tableView.cellForRow(at: indexPath)
+    let year = cell?.tag ?? 0
+    
+    select?(year)
+    self.dismiss(animated: false, completion: nil)
+  }
 }
 
 // MARK: - UITableViewDataSource
