@@ -10,8 +10,34 @@ import UIKit
 
 final class SideMenuViewController: UIViewController {
   
+  // MARK: UI
+  
+  private let tableView = UITableView(frame: .zero).then {
+    $0.backgroundColor = .white
+    $0.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+  }
+  
+  // MARK: View Life Cycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    self.tableView.dataSource = self
+    self.tableView.delegate = self
+    
+    self.view.addSubview(self.tableView)
   }
+  
+}
+
+// MARK: - UITableViewDelegate
+
+extension SideMenuViewController: UITableViewDelegate {
+  
+}
+
+// MARK: - UITableViewDataSource
+
+extension SideMenuViewController: UITableViewDataSource {
   
 }
