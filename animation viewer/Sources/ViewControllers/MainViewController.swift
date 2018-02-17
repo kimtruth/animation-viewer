@@ -128,6 +128,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     let info = self.infos[indexPath.item]
     let epiListViewController = EpiListViewController()
     epiListViewController.title = info.title
+    epiListViewController.info = info
     
     self.navigationController?.pushViewController(epiListViewController, animated: true)
   }
