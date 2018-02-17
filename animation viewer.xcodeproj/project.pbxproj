@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		981C65562037C7FD0003C272 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981C65552037C7FD0003C272 /* SideMenuViewController.swift */; };
 		98F35D4A20370126006E474A /* AniCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F35D4920370126006E474A /* AniCell.swift */; };
 		98F35D4D20370DF8006E474A /* AniInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F35D4C20370DF8006E474A /* AniInfo.swift */; };
 		98F35D50203714A5006E474A /* APIServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F35D4F203714A5006E474A /* APIServiceType.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		43285CEA3E24CA38658BA933 /* Pods-animation viewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-animation viewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-animation viewer/Pods-animation viewer.debug.xcconfig"; sourceTree = "<group>"; };
 		79A54B4B4224E8FCF83A84BB /* Pods-animation viewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-animation viewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-animation viewer/Pods-animation viewer.release.xcconfig"; sourceTree = "<group>"; };
+		981C65552037C7FD0003C272 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		98F35D4920370126006E474A /* AniCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniCell.swift; sourceTree = "<group>"; };
 		98F35D4C20370DF8006E474A /* AniInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AniInfo.swift; sourceTree = "<group>"; };
 		98F35D4F203714A5006E474A /* APIServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceType.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				98FDB26E2036F67C00FDA58A /* MainViewController.swift */,
+				981C65552037C7FD0003C272 /* SideMenuViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				98F35D50203714A5006E474A /* APIServiceType.swift in Sources */,
 				98FDB26F2036F67C00FDA58A /* MainViewController.swift in Sources */,
 				98F35D4A20370126006E474A /* AniCell.swift in Sources */,
+				981C65562037C7FD0003C272 /* SideMenuViewController.swift in Sources */,
 				98F35D532037151A006E474A /* AniService.swift in Sources */,
 				98FDB26D2036F67C00FDA58A /* AppDelegate.swift in Sources */,
 			);
