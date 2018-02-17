@@ -79,7 +79,8 @@ final class MainViewController: UIViewController {
   }
   
   @objc func showMenu() {
-    print("show menu called")
+    let sideMenuViewController = SideMenuViewController()
+    self.present(sideMenuViewController, animated: false, completion: nil)
   }
   
 }
