@@ -20,7 +20,7 @@ final class AniCell: UICollectionViewCell {
     $0.layer.shadowRadius = 3.0
   }
   private let imageView = UIImageView().then {
-    $0.backgroundColor = .lightGray
+    $0.backgroundColor = .white
     $0.clipsToBounds = true
     $0.layer.cornerRadius = 10
   }
