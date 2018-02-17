@@ -44,7 +44,7 @@ final class SideMenuViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    tableViewOpen()
+    self.tableViewOpen()
   }
   
   func tableViewOpen() {
@@ -70,6 +70,12 @@ final class SideMenuViewController: UIViewController {
     }
   }
   
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.tableViewClose() {
+      self.dismiss(animated: false, completion: nil)
+    }
+  }
+  
 }
 
 // MARK: - UITableViewDelegate
@@ -79,8 +85,8 @@ extension SideMenuViewController: UITableViewDelegate {
     let cell = tableView.cellForRow(at: indexPath)
     let year = cell?.tag ?? 0
     
-    select?(year)
-    tableViewClose() {
+    self.select?(year)
+    self.tableViewClose() {
       self.dismiss(animated: false, completion: nil)
     }
   }
