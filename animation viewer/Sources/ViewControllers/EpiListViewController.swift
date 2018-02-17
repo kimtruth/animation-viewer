@@ -58,17 +58,37 @@ final class EpiListViewController: UIViewController {
     let videoAsset = AVAsset(url: myURL)
     let subtitleAsset = AVAsset(url: mySubtitleURL)
     let mixComposition = AVMutableComposition()
-    let videoTrack = mixComposition.addMutableTrack(withMediaType: .video,
-                                                    preferredTrackID: kCMPersistentTrackID_Invalid)
-    let subtitleTrack = mixComposition.addMutableTrack(withMediaType: .text,
-                                                       preferredTrackID: kCMPersistentTrackID_Invalid)
+    
+    let videoTrack = mixComposition.addMutableTrack(
+      withMediaType: .video,
+      preferredTrackID: kCMPersistentTrackID_Invalid
+    )
+    let audioTrack = mixComposition.addMutableTrack(
+      withMediaType: .audio,
+      preferredTrackID: kCMPersistentTrackID_Invalid
+    )
+    let subtitleTrack = mixComposition.addMutableTrack(
+      withMediaType: .text,
+      preferredTrackID: kCMPersistentTrackID_Invalid
+    )
     let videoDuration = CMTimeRange(start: kCMTimeZero, end: videoAsset.duration)
-    try! videoTrack?.insertTimeRange(videoDuration,
-                                     of: videoAsset.tracks(withMediaType: .video)[0],
-                                     at: kCMTimeZero)
-    try! subtitleTrack?.insertTimeRange(videoDuration,
-                                        of: subtitleAsset.tracks(withMediaType: .text)[0],
-                                        at: kCMTimeZero)
+    
+    try! videoTrack?.insertTimeRange(
+      videoDuration,
+      of: videoAsset.tracks(withMediaType: .video)[0],
+      at: kCMTimeZero
+    )
+    try! audioTrack?.insertTimeRange(
+      videoDuration,
+      of: videoAsset.tracks(withMediaType: .audio)[0],
+      at: kCMTimeZero
+    )
+    try! subtitleTrack?.insertTimeRange(
+      videoDuration,
+      of: subtitleAsset.tracks(withMediaType: .text)[0],
+      at: kCMTimeZero
+    )
+    
     let player = AVPlayer(playerItem: AVPlayerItem(asset: mixComposition))
     let playerViewController = AVPlayerViewController()
     playerViewController.player = player
