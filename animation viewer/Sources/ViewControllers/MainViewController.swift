@@ -96,6 +96,8 @@ final class MainViewController: UIViewController {
   
 }
 
+// MARK: - UICollectionViewDataSource
+
 extension MainViewController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -111,12 +113,23 @@ extension MainViewController: UICollectionViewDataSource {
   
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+
 extension MainViewController: UICollectionViewDelegateFlowLayout {
+  
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let width = (self.view.width - 30) / 2
     let height = width / 16 * 9 + 30
     let size = CGSize(width: width, height: height)
     return size
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let info = self.infos[indexPath.item]
+    let epiListViewController = EpiListViewController()
+    epiListViewController.title = info.title
+    
+    self.navigationController?.pushViewController(epiListViewController, animated: true)
   }
   
 }
