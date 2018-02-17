@@ -26,6 +26,11 @@ final class SideMenuViewController: UIViewController {
     self.tableView.delegate = self
     
     self.view.addSubview(self.tableView)
+    
+    self.tableView.snp.makeConstraints { make in
+      make.top.left.bottom.equalToSuperview()
+      make.width.equalToSuperview().multipliedBy(0.4)
+    }
   }
   
 }
