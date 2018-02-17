@@ -20,6 +20,7 @@ final class SideMenuViewController: UIViewController {
   private let tableView = UITableView(frame: .zero).then {
     $0.backgroundColor = .white
     $0.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    $0.tableFooterView = UIView(frame: .zero)
   }
   
   // MARK: View Life Cycle
