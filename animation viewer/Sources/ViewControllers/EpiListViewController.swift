@@ -6,6 +6,7 @@
 //  Copyright © 2018년 kimtruth. All rights reserved.
 //
 
+import AVKit
 import UIKit
 
 final class EpiListViewController: UIViewController {
@@ -51,12 +52,50 @@ final class EpiListViewController: UIViewController {
     }
   }
   
+  func playVideo(url: String, vtt: String) {
+    guard let myURL = URL(string: url) else { return }
+    guard let mySubtitleURL = URL(string: vtt) else { return }
+    let videoAsset = AVAsset(url: myURL)
+    let subtitleAsset = AVAsset(url: mySubtitleURL)
+    let mixComposition = AVMutableComposition()
+    let videoTrack = mixComposition.addMutableTrack(withMediaType: .video,
+                                                    preferredTrackID: kCMPersistentTrackID_Invalid)
+    let subtitleTrack = mixComposition.addMutableTrack(withMediaType: .text,
+                                                       preferredTrackID: kCMPersistentTrackID_Invalid)
+    let videoDuration = CMTimeRange(start: kCMTimeZero, end: videoAsset.duration)
+    try! videoTrack?.insertTimeRange(videoDuration,
+                                     of: videoAsset.tracks(withMediaType: .video)[0],
+                                     at: kCMTimeZero)
+    try! subtitleTrack?.insertTimeRange(videoDuration,
+                                        of: subtitleAsset.tracks(withMediaType: .text)[0],
+                                        at: kCMTimeZero)
+    let player = AVPlayer(playerItem: AVPlayerItem(asset: mixComposition))
+    let playerViewController = AVPlayerViewController()
+    playerViewController.player = player
+    self.present(playerViewController, animated: true) {
+      playerViewController.player!.play()
+    }
+  }
+  
 }
 
 // MARK: - UITableViewDelegate
 
 extension EpiListViewController: UITableViewDelegate {
   
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let urlString = self.episodes[indexPath.row]
+    guard var urlEncoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+    guard let key = info?.key else { return }
+    let vtt = "http://very.secret.url/subs/\(key)/\(indexPath.row + 1).vtt"
+    
+    urlEncoded = "http://very.secret.url/\(key)/\(urlEncoded)"
+    print(urlEncoded)
+    print(vtt)
+    
+    playVideo(url: urlEncoded, vtt: vtt)
+    
+  }
 }
 
 // MARK: - UITableViewDataSource
