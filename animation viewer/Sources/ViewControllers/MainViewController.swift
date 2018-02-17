@@ -87,6 +87,7 @@ final class MainViewController: UIViewController {
         self.collectionView.reloadData()
       }
     }
+    sideMenuViewController.modalPresentationStyle = .overCurrentContext
       
     self.present(sideMenuViewController, animated: false, completion: nil)
   }

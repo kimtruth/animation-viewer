@@ -28,6 +28,8 @@ final class SideMenuViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    self.view.backgroundColor = UIColor(red:0, green:0, blue:0, alpha:0.2)
+    
     self.tableView.dataSource = self
     self.tableView.delegate = self
     
