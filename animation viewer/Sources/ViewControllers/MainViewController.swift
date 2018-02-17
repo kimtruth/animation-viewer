@@ -12,6 +12,7 @@ final class MainViewController: UIViewController {
 
   // MARK: Properties
   
+  private var aniDict: [Int: [AniInfo]] = [Int: [AniInfo]]()
   private var infos: [AniInfo] = []
   
   // MARK: UI
@@ -60,6 +61,18 @@ final class MainViewController: UIViewController {
       case .success(let value):
         guard let infoJSONArray = value as? [[String: Any]] else { return }
         self.infos = [AniInfo](JSONArray: infoJSONArray)
+        self.aniDict = self.infos.reduce(into: [Int: [AniInfo]]()) {
+          if $0[$1.year] == nil  {
+            $0[$1.year] = []
+          }
+          $0[$1.year]?.append($1)
+        }
+        
+        let recentYear = Array(self.aniDict.keys).max() ?? 0
+        if let infos = self.aniDict[recentYear] {
+          self.infos = infos
+        }
+        
         self.collectionView.reloadData()
       }
     }
