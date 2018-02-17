@@ -28,7 +28,7 @@ final class SideMenuViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.view.backgroundColor = UIColor(red:0, green:0, blue:0, alpha:0.2)
+    self.view.backgroundColor = UIColor(red:0, green:0, blue:0, alpha:0.0)
     
     self.tableView.dataSource = self
     self.tableView.delegate = self
@@ -36,8 +36,37 @@ final class SideMenuViewController: UIViewController {
     self.view.addSubview(self.tableView)
     
     self.tableView.snp.makeConstraints { make in
-      make.top.left.bottom.equalToSuperview()
-      make.width.equalToSuperview().multipliedBy(0.4)
+      make.top.bottom.equalToSuperview()
+      make.width.equalTo(130)
+      make.left.equalTo(-130)
+    }
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    tableViewOpen()
+  }
+  
+  func tableViewOpen() {
+    self.tableView.snp.updateConstraints { make in
+      make.left.equalTo(0)
+    }
+    
+    UIView.animate(withDuration: 0.25) {
+      self.view.backgroundColor = UIColor(red:0, green:0, blue:0, alpha:0.2)
+      self.view.layoutIfNeeded()
+    }
+  }
+  
+  func tableViewClose(completion: (() -> Void)?) {
+    self.tableView.snp.updateConstraints { make in
+      make.left.equalTo(-130)
+    }
+    UIView.animate(withDuration: 0.25, animations: {
+      self.view.backgroundColor = UIColor(red:0, green:0, blue:0, alpha:0.0)
+      self.view.layoutIfNeeded()
+    }) { (finished) in
+      completion?()
     }
   }
   
@@ -51,7 +80,9 @@ extension SideMenuViewController: UITableViewDelegate {
     let year = cell?.tag ?? 0
     
     select?(year)
-    self.dismiss(animated: false, completion: nil)
+    tableViewClose() {
+      self.dismiss(animated: false, completion: nil)
+    }
   }
 }
 
