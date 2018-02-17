@@ -10,6 +10,11 @@ import UIKit
 
 final class SideMenuViewController: UIViewController {
   
+  // MARK: Properties
+  
+  var years: [Int]?
+  
+  
   // MARK: UI
   
   private let tableView = UITableView(frame: .zero).then {
@@ -44,5 +49,18 @@ extension SideMenuViewController: UITableViewDelegate {
 // MARK: - UITableViewDataSource
 
 extension SideMenuViewController: UITableViewDataSource {
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return years?.count ?? 0
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    let year = years?[indexPath.row] ?? 0
+    
+    cell.tag = year
+    cell.textLabel?.text = String(year)
+    return cell
+  }
   
 }

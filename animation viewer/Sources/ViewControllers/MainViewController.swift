@@ -80,6 +80,7 @@ final class MainViewController: UIViewController {
   
   @objc func showMenu() {
     let sideMenuViewController = SideMenuViewController()
+    sideMenuViewController.years = Array(self.aniDict.keys).sorted(by: >)
     self.present(sideMenuViewController, animated: false, completion: nil)
   }
   
