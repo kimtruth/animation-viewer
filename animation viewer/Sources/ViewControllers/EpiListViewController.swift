@@ -21,6 +21,10 @@ final class EpiListViewController: UIViewController {
     self.tableView.delegate = self
     
     self.view.addSubview(self.tableView)
+    
+    self.tableView.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
   }
   
 }
