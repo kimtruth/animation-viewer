@@ -39,9 +39,7 @@ final class AniCell: UICollectionViewCell {
     self.addSubview(self.titleLabel)
     
     self.imageShadowView.snp.makeConstraints { make in
-      make.top.equalToSuperview()
-      make.left.equalToSuperview()
-      make.right.equalToSuperview()
+      make.top.left.right.equalToSuperview()
       make.bottom.equalToSuperview().offset(-30)
     }
     self.imageView.snp.makeConstraints { make in
@@ -49,9 +47,7 @@ final class AniCell: UICollectionViewCell {
     }
     self.titleLabel.snp.makeConstraints { make in
       make.top.equalTo(self.imageView.snp.bottom)
-      make.left.equalToSuperview()
-      make.right.equalToSuperview()
-      make.bottom.equalToSuperview()
+      make.left.right.bottom.equalToSuperview()
     }
   }
   
