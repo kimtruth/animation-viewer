@@ -83,11 +83,15 @@ final class EpiListViewController: UIViewController {
       of: videoAsset.tracks(withMediaType: .audio)[0],
       at: kCMTimeZero
     )
-    try! subtitleTrack?.insertTimeRange(
-      videoDuration,
-      of: subtitleAsset.tracks(withMediaType: .text)[0],
-      at: kCMTimeZero
-    )
+    
+    let subtitleAssetTracks = subtitleAsset.tracks(withMediaType: .text)
+    if subtitleAssetTracks.count > 0 {
+      try! subtitleTrack?.insertTimeRange(
+        videoDuration,
+        of: subtitleAsset.tracks(withMediaType: .text)[0],
+        at: kCMTimeZero
+      )
+    }
     
     let player = AVPlayer(playerItem: AVPlayerItem(asset: mixComposition))
     let playerViewController = AVPlayerViewController()
