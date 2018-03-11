@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 import ManualLayout
 import SnapKit
@@ -19,6 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    
+    let center = UNUserNotificationCenter.current()
+    center.requestAuthorization(options: [.alert, .badge, .sound], completionHandler: {(granted, error) in
+      if granted {
+        DispatchQueue.main.async(execute: {
+          application.registerForRemoteNotifications()
+        })
+      }
+    })
+    
     let window = UIWindow(frame: UIScreen.main.bounds)
     window.backgroundColor = .white
     window.makeKeyAndVisible()
@@ -30,6 +41,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     self.window = window
     return true
+  }
+  
+  func application(_ application: UIApplication,
+                   didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data){
+    let tokenString = deviceToken.map { String(format: "%.2hhx", $0) }.joined()
+    print("deviceToken = \(tokenString)")
+  }
+  
+  func application(_ application: UIApplication,
+                   didFailToRegisterForRemoteNotificationsWithError error: Error){
+    print("Failed to get deviceToken, error: \(error.localizedDescription)")
+  }
+  
+  func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+    print("didReceiveRemoteNotification : \(userInfo)")
   }
   
   func applicationWillResignActive(_ application: UIApplication) {
@@ -48,6 +74,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func applicationDidBecomeActive(_ application: UIApplication) {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    UIApplication.shared.applicationIconBadgeNumber = 0
   }
   
   func applicationWillTerminate(_ application: UIApplication) {

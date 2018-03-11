@@ -19,6 +19,7 @@
 		98FDB26F2036F67C00FDA58A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FDB26E2036F67C00FDA58A /* MainViewController.swift */; };
 		98FDB2742036F67C00FDA58A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98FDB2732036F67C00FDA58A /* Assets.xcassets */; };
 		98FDB2772036F67C00FDA58A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98FDB2752036F67C00FDA58A /* LaunchScreen.storyboard */; };
+		98FF76052054F2D0004EE2B5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FF76042054F2D0004EE2B5 /* UserNotifications.framework */; };
 		C9485CE394785AD439E298D4 /* Pods_animation_viewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F7918D55BA29B293385D4D /* Pods_animation_viewer.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,8 @@
 		98FDB2732036F67C00FDA58A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98FDB2762036F67C00FDA58A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98FDB2782036F67C00FDA58A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98FF76032054F2BB004EE2B5 /* animation viewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "animation viewer.entitlements"; sourceTree = "<group>"; };
+		98FF76042054F2D0004EE2B5 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		E9F7918D55BA29B293385D4D /* Pods_animation_viewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_animation_viewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -47,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98FF76052054F2D0004EE2B5 /* UserNotifications.framework in Frameworks */,
 				C9485CE394785AD439E298D4 /* Pods_animation_viewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,6 +106,7 @@
 		98FDB26B2036F67C00FDA58A /* animation viewer */ = {
 			isa = PBXGroup;
 			children = (
+				98FF76032054F2BB004EE2B5 /* animation viewer.entitlements */,
 				98FDB26C2036F67C00FDA58A /* AppDelegate.swift */,
 				98FDB27F2036F7A800FDA58A /* Resources */,
 				98FDB2802036F90C00FDA58A /* Sources */,
@@ -143,6 +148,7 @@
 		AC3E40F956E315ED17931330 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				98FF76042054F2D0004EE2B5 /* UserNotifications.framework */,
 				E9F7918D55BA29B293385D4D /* Pods_animation_viewer.framework */,
 			);
 			name = Frameworks;
@@ -193,6 +199,11 @@
 					98FDB2682036F67C00FDA58A = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -418,6 +429,8 @@
 			baseConfigurationReference = 43285CEA3E24CA38658BA933 /* Pods-animation viewer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "animation viewer/animation viewer.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z79MDNXYJV;
 				INFOPLIST_FILE = "animation viewer/Info.plist";
@@ -435,6 +448,8 @@
 			baseConfigurationReference = 79A54B4B4224E8FCF83A84BB /* Pods-animation viewer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "animation viewer/animation viewer.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z79MDNXYJV;
 				INFOPLIST_FILE = "animation viewer/Info.plist";
