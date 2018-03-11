@@ -31,4 +31,11 @@ struct AniInfo: Mappable {
     self.title <- map["value"]
     self.year <- map["year"]
   }
+  
+  static func <(lhs: AniInfo, rhs: AniInfo) -> Bool {
+    if lhs.season == rhs.season {
+      return lhs.title < rhs.title
+    }
+    return lhs.season < rhs.season
+  }
 }
